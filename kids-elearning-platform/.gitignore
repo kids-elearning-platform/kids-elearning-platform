@@ -7,7 +7,6 @@ package-lock.json
 # local env files
 .env.local
 .env.*.local
-/* eslint-disable */
 # Log files
 npm-debug.log*
 yarn-debug.log*
