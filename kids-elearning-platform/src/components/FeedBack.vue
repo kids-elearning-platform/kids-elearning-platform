@@ -1,8 +1,8 @@
+
 <template>
   <div class="about" >
     Our Website consists of giving children small problems to solve , in Order
     to increase their logic
-    
     We love teaching kids, and we try to make them feel comfortable learning
     math,languages and alot more
    
