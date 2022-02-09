@@ -18,19 +18,19 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path: "/challenge",
+    path: "/Challenge",
     name: "Challenge",
     component: () =>
     import(/* webpackChunkName: "Challenge" */ "../views/Challenge.vue"),
   },
   {
-    path: "/feedback",
+    path: "/Feedback",
     name: "Feedback" ,
     component: () =>
     import(/* webpackChunkName: "Feedback" */ "../views/Feedback.vue"),
   },
   {
-    path: "/contact",
+    path: "/Contact",
     name: "Contact" ,
     component: () =>
     import(/* webpackChunkName: "Contact" */ "../views/Contact.vue"),
