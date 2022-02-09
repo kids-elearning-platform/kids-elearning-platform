@@ -13,7 +13,7 @@
       <li><router-link to="/about">About</router-link></li>
       <li><a href="#">Contact</a></li>
       <li><router-link to="/challenge">Challenge</router-link></li>
-      <li><a href="#">Feedback</a></li>
+      <li><router-link to="/About ">About  </router-link></li>
     </ul>
   </nav>
   <router-view/>

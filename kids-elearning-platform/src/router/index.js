@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-
+import FeedBack from "../components/FeedBack.vue"
 const routes = [
   {
     path: "/",
@@ -16,6 +16,11 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path:'/About',
+    name:"About",
+    component : FeedBack
+  }
 ];
 
 const router = createRouter({
