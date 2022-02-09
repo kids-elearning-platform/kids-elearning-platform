@@ -1,4 +1,4 @@
-# kids-elearning-platform
+# kids-game-project
 
 ## Project setup
 ```
