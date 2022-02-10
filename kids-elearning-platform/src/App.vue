@@ -11,13 +11,11 @@
       <li><router-link to="/Feedback">Feedback</router-link></li>
     </ul>
   </nav>
-  
+
   <router-view />
 </template>
 
-
-
-<style >
+<style>
 body {
   font-family: monospace;
   background-image: url("https://wallpaperaccess.com/full/1704619.jpg");
