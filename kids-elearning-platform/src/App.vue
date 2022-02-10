@@ -16,18 +16,34 @@
       <li><router-link to="/Feedback">Feedback</router-link></li>
     </ul>
   </nav>
+  
   <router-view />
 </template>
 
-<style>
+<script>
+//  let data = {
+//  	home: '🏠', 
+//  	search: '🔍', 
+//  	likes: '🖤', 
+//  	notification: '🔔', 
+//  	profile: '👱'
+//  };
+
+
+// nav(style=`--n: ${n}; --k: 0`)
+// 	for(let i = 0; i < n; i++)
+// 		a.nav-item(href='#' data-ico=a[i][1] style=`--i: ${i}`) #{a[i][0]}
+</script>
+
+<style >
 body {
   font-family: monospace;
-  background-image: url(https://st4.depositphotos.com/5383684/26687/v/1600/depositphotos_266873404-stock-illustration-back-to-school-kidseducation-concept.jpg);
+  background-image: url("https://wallpaperaccess.com/full/1704619.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 nav {
-  background-color: #1b9bff;
+  background-color: #0e0d0d04;
   height: 80px;
   width: 100%;
 }

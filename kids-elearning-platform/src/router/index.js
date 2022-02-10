@@ -34,6 +34,36 @@ const routes = [
     name: "Contact" ,
     component: () =>
     import(/* webpackChunkName: "Contact" */ "../views/Contact.vue"),
+  },
+  {
+    path: "/Ad1min",
+    name: "Admin" ,
+    component: () =>
+    import(/* webpackChunkName: "Contact" */ "../views/Admin.vue"),
+  },
+  {
+    path: "/Fruit",
+    name: "Fruit" ,
+    component: () =>
+    import(/* webpackChunkName: "Contact" */ "../views/Fruit.vue"),
+  },
+  {
+    path: "/Number",
+    name: "Number" ,
+    component: () =>
+    import(/* webpackChunkName: "Contact" */ "../views/Number.vue"),
+  },
+  {
+    path: "/Color",
+    name: "Color" ,
+    component: () =>
+    import(/* webpackChunkName: "Contact" */ "../views/Color.vue"),
+  },
+  {
+    path: "/Animal",
+    name: "Animal" ,
+    component: () =>
+    import(/* webpackChunkName: "Contact" */ "../views/Animal.vue"),
   }
 ];
 
