@@ -1,15 +1,12 @@
-
-  
 <template>
-  <h1>This is an about page</h1>
+  <h1>Color</h1>
 </template>
 
 <script>
 export default {
-name : "About",
-}
+  name: "Color",
+};
 </script>
 
 <style>
-
 </style>

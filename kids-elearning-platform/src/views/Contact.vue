@@ -1,15 +1,12 @@
-
-  
 <template>
-  <h1>This is an about page</h1>
+  <h1>Contact</h1>
 </template>
 
 <script>
 export default {
-name : "About",
-}
+  name: "Contact",
+};
 </script>
 
 <style>
-
 </style>

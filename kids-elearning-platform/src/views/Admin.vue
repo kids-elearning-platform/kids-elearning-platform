@@ -1,15 +1,13 @@
 
-  
 <template>
-  <h1>This is an about page</h1>
+  <h1>FUCK</h1>
 </template>
 
 <script>
 export default {
-name : "About",
-}
+  name: "Admin",
+};
 </script>
 
 <style>
-
 </style>

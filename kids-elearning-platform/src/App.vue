@@ -1,34 +1,31 @@
 <template>
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div> -->
-  
   <nav>
     <i class="fas fa-bars"></i>
 
-    <label class="logo">Welcome!</label>
+    <label class="logo">Kids World</label>
     <ul>
       <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/about">About</router-link></li>
-      <li><a href="#">Contact</a></li>
-      <li><router-link to="/challenge">Challenge</router-link></li>
-      <li><a href="#">Feedback</a></li>
+      <li><router-link to="/About">About</router-link></li>
+      <li><router-link to="/Contact">Contact</router-link></li>
+      <li><router-link to="/Challenge">Challenge</router-link></li>
+      <li><router-link to="/Feedback">Feedback</router-link></li>
     </ul>
   </nav>
-  <router-view/>
- 
+
+  <router-view />
 </template>
 
-<style>
+
+
+<style >
 body {
   font-family: monospace;
-  background-image: url(https://st4.depositphotos.com/5383684/26687/v/1600/depositphotos_266873404-stock-illustration-back-to-school-kidseducation-concept.jpg);
+  background-image: url("https://wallpaperaccess.com/full/1704619.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 nav {
-  background-color: #1b9bff;
+  background-color: #0e0d0d04;
   height: 80px;
   width: 100%;
 }
