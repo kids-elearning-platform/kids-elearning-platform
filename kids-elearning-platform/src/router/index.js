@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 
-
 const routes = [
   {
     path: "/",
@@ -35,35 +34,39 @@ const routes = [
     component: () =>
     import(/* webpackChunkName: "Contact" */ "../views/Contact.vue"),
   },
-  {
+   {
     path: "/Ad1min",
     name: "Admin" ,
     component: () =>
-    import(/* webpackChunkName: "Contact" */ "../views/Admin.vue"),
-  },
+    import(/* webpackChunkName: "Admin" */ "../views/Admin.vue"),
+   },
   {
     path: "/Fruit",
     name: "Fruit" ,
     component: () =>
-    import(/* webpackChunkName: "Contact" */ "../views/Fruit.vue"),
+    import(/* webpackChunkName: "Fruit" */ "../views/Fruit.vue"),
   },
   {
     path: "/Number",
     name: "Number" ,
     component: () =>
-    import(/* webpackChunkName: "Contact" */ "../views/Number.vue"),
+    import(/* webpackChunkName: "Number" */ "../views/Number.vue"),
   },
   {
     path: "/Color",
     name: "Color" ,
     component: () =>
-    import(/* webpackChunkName: "Contact" */ "../views/Color.vue"),
+    import(/* webpackChunkName: "Color" */ "../views/Color.vue"),
   },
   {
     path: "/Animal",
     name: "Animal" ,
     component: () =>
-    import(/* webpackChunkName: "Contact" */ "../views/Animal.vue"),
+    import(/* webpackChunkName: "Animal" */ "../views/Animal.vue"),
+    path:"/login",
+    name:"login",
+    component : ()=>
+    import(/*webpackChunkName: "login" */ "../components/Login.vue")
   }
 ];
 

@@ -1,5 +1,15 @@
 <template>
-  <div>Challenge</div>
+  <div>
+    <div >
+      <h1 id="start" onclick="clicked">start</h1>
+
+    </div>
+    
+    
+  </div>
+  
+
+  
 </template>
 
 <script>
@@ -9,6 +19,11 @@ export default {
 </script>
 
 <style>
+#start{
+  color: aliceblue;
+  
+}
+
 
 
 </style>

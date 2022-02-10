@@ -1,16 +1,16 @@
 
 <template>
-  <div>Admin</div>
+ <h1>FUCK</h1>
 </template>
 
 <script>
+
 export default {
-name : "Admin" 
+name : 'Admin',
 
 }
-
 </script>
 
-<style scoped>
+<style>
 
 </style>

@@ -1,13 +1,8 @@
 <template>
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div> -->
-
   <nav>
     <i class="fas fa-bars"></i>
 
-    <label class="logo">Welcome!</label>
+    <label class="logo">Kids World</label>
     <ul>
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/About">About</router-link></li>
@@ -20,20 +15,7 @@
   <router-view />
 </template>
 
-<script>
-//  let data = {
-//  	home: '🏠', 
-//  	search: '🔍', 
-//  	likes: '🖤', 
-//  	notification: '🔔', 
-//  	profile: '👱'
-//  };
 
-
-// nav(style=`--n: ${n}; --k: 0`)
-// 	for(let i = 0; i < n; i++)
-// 		a.nav-item(href='#' data-ico=a[i][1] style=`--i: ${i}`) #{a[i][0]}
-</script>
 
 <style >
 body {
