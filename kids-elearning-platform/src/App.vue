@@ -3,21 +3,20 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div> -->
-  
+
   <nav>
     <i class="fas fa-bars"></i>
 
     <label class="logo">Welcome!</label>
     <ul>
       <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/about">About</router-link></li>
-      <li><a href="#">Contact</a></li>
-      <li><router-link to="/challenge">Challenge</router-link></li>
-      <li><router-link to="/About ">About  </router-link></li>
+      <li><router-link to="/About">About</router-link></li>
+      <li><router-link to="/Contact">Contact</router-link></li>
+      <li><router-link to="/Challenge">Challenge</router-link></li>
+      <li><router-link to="/Feedback">Feedback</router-link></li>
     </ul>
   </nav>
-  <router-view/>
- 
+  <router-view />
 </template>
 
 <style>
