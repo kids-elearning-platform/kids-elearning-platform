@@ -3,11 +3,12 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div> -->
+  <Login/>
 
   <nav>
     <i class="fas fa-bars"></i>
 
-    <label class="logo">Welcome!</label>
+    <label class="logo">Kids World</label>
     <ul>
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/About">About</router-link></li>
@@ -22,12 +23,13 @@
 <style>
 body {
   font-family: monospace;
-  background-image: url(https://st4.depositphotos.com/5383684/26687/v/1600/depositphotos_266873404-stock-illustration-back-to-school-kidseducation-concept.jpg);
+  /* background-image: url(""); */
+  /* background-color: #2c3e50; */
   background-repeat: no-repeat;
   background-size: cover;
 }
 nav {
-  background-color: #1b9bff;
+  background-color: rgba(25, 233, 6, 0.541);
   height: 80px;
   width: 100%;
 }
