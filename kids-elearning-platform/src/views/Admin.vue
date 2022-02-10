@@ -1,16 +1,30 @@
-
 <template>
- <h1>FUCK</h1>
+    <div class="fullPage" >
+
+</div>
 </template>
 
+
 <script>
-
-export default {
-name : 'Admin',
-
-}
+    // import axios from "axios";
+    // import VueAxios from "vue-axios";
+ export default {
+     name : 'Admin',
+     data () {
+         return {
+             infos : {
+              
+             }
+         }
+     },
+     methods : {
+     
+     }
+ }
 </script>
 
-<style>
+
+<style scoped >
+ 
 
 </style>
