@@ -21,7 +21,7 @@
 <script>
 import axios from 'axios';
 export default {
-  name: "admin",
+  name: "Login" ,
   data (){
       return {
           email:'',

@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 
-
 const routes = [
   {
     path: "/",
@@ -35,7 +34,35 @@ const routes = [
     component: () =>
     import(/* webpackChunkName: "Contact" */ "../views/Contact.vue"),
   },
+   {
+    path: "/Ad1min",
+    name: "Admin" ,
+    component: () =>
+    import(/* webpackChunkName: "Admin" */ "../views/Admin.vue"),
+   },
   {
+    path: "/Fruit",
+    name: "Fruit" ,
+    component: () =>
+    import(/* webpackChunkName: "Fruit" */ "../views/Fruit.vue"),
+  },
+  {
+    path: "/Number",
+    name: "Number" ,
+    component: () =>
+    import(/* webpackChunkName: "Number" */ "../views/Number.vue"),
+  },
+  {
+    path: "/Color",
+    name: "Color" ,
+    component: () =>
+    import(/* webpackChunkName: "Color" */ "../views/Color.vue"),
+  },
+  {
+    path: "/Animal",
+    name: "Animal" ,
+    component: () =>
+    import(/* webpackChunkName: "Animal" */ "../views/Animal.vue"),
     path:"/login",
     name:"login",
     component : ()=>
