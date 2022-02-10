@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import FeedBack from "../components/FeedBack.vue"
+
+
 const routes = [
   {
     path: "/",
@@ -8,7 +9,7 @@ const routes = [
     component: Home,
   },
   {
-    path: "/about",
+    path: "/About",
     name: "About",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -17,9 +18,28 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path:'/About',
-    name:"About",
-    component : FeedBack
+    path: "/Challenge",
+    name: "Challenge",
+    component: () =>
+    import(/* webpackChunkName: "Challenge" */ "../views/Challenge.vue"),
+  },
+  {
+    path: "/Feedback",
+    name: "Feedback" ,
+    component: () =>
+    import(/* webpackChunkName: "Feedback" */ "../views/Feedback.vue"),
+  },
+  {
+    path: "/Contact",
+    name: "Contact" ,
+    component: () =>
+    import(/* webpackChunkName: "Contact" */ "../views/Contact.vue"),
+  },
+  {
+    path:"/login",
+    name:"login",
+    component : ()=>
+    import(/*webpackChunkName: "login" */ "../components/Login.vue")
   }
 ];
 
