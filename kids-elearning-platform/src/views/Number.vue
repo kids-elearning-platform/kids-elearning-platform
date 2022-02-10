@@ -5,8 +5,10 @@
 <script>
 export default {
   name: "Number",
-};
+}
 </script>
 
 <style>
+
+
 </style>

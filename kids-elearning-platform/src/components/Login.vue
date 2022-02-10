@@ -1,7 +1,8 @@
 <template>
-  <div class="container">
+   <div class="container">
     <section>
       <form class="logg" @submit.prevent="handleSubmit">
+       
         <label>
           <input type="email" name="email" id="email" required />
           <div class="label-text">Email</div>
@@ -14,29 +15,31 @@
       </form>
     </section>
   </div>
+  
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 export default {
-  name: "Login",
-  data() {
-    return {
-      email: "",
-      password: "",
-    };
+  name: "Login" ,
+  data (){
+      return {
+          email:'',
+          password: ''
+      }
   },
-  methods: {
-    async handleSubmit() {
-      const response = await axios.post("/admin", {
-        email: this.email,
-        password: this.password,
-      });
-      console.log(response);
-      localStorage.setItem("token", response.data.token);
-    },
-  },
-};
+  methods:{
+     async handleSubmit(){
+         const response = await  axios.post('/admin',{
+             email:this.email,
+             password:this.password
+         })
+         console.log(response)
+         localStorage.setItem('token',response.data.token)
+
+      }
+  }
+}
 </script>
 
 <style>
@@ -46,24 +49,25 @@ export default {
   font-family: 'Montserrat', sans-serif;
 } */
 
-div.container {
+div.container{
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
-.logg {
-  /* background-image: url(""); */
-  background: rgba(0, 0, 0, 0.733);
-  margin-left: 1200px;
-  margin-top: 150px;
+.logg{
+    /* background-image: url(""); */
+    background: rgba(0, 0, 0, 0.733);
+    margin-left: 1200px;
+    margin-top: 150px;
 }
 
 /* form design */
 
 form {
   text-align: center;
-  border: 1px solid #4a4a4a;
+  border: 1px solid #4A4A4A;
   padding: 30px;
 }
 
@@ -93,7 +97,7 @@ label .label-text {
 label input {
   background-color: transparent;
   border: 0;
-  border-bottom: 2px solid #4a4a4a;
+  border-bottom: 2px solid #4A4A4A;
   color: rgb(0, 0, 0);
   font-size: 20px;
   letter-spacing: 1px;
@@ -114,7 +118,7 @@ label input:focus {
 /* the text floats up and turns white */
 
 label input:focus + .label-text {
-  color: #f0f0f0;
+  color: #F0F0F0;
   font-size: 13px;
   margin-top: 10px;
   -moz-transform: translateY(-74px);
@@ -137,8 +141,8 @@ label input:valid + .label-text {
 
 button {
   background: transparent;
-  color: #f0f0f0;
-  border: 2px solid #f0f0f0;
+  color: #F0F0F0;
+  border: 2px solid #F0F0F0;
   font-size: 15px;
   letter-spacing: 2px;
   padding: 20px 75px;
@@ -151,9 +155,10 @@ button {
   transition: all 0.4s;
 }
 
-button:hover,
-button:focus {
+button:hover, button:focus {
   background-color: white;
   color: #333333;
 }
+
+
 </style>

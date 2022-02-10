@@ -1,12 +1,10 @@
 <template>
-  <h1><HelloWorld /></h1>
-
+<h1><HelloWorld/></h1>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from "../components/HelloWorld.vue";
-
 
 
 export default {
@@ -18,13 +16,14 @@ export default {
 </script>
 
 <style scoped>
-#logoo {
-  height: 120px;
+
+#logoo{
+  height:120px;
   width: 120px;
   margin-left: -1000px;
   margin-top: 00px;
 }
-#logo {
+#logo{
   margin-right: -500px;
 }
 </style>

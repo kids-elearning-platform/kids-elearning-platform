@@ -4,9 +4,10 @@
 
 <script>
 export default {
-  name: "Fruit",
-};
+name:'Fruit'
+}
 </script>
 
 <style>
+
 </style>

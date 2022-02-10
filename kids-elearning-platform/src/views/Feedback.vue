@@ -4,9 +4,10 @@
 
 <script>
 export default {
-  name: "Feedback",
-};
+name : "Feedback"
+}
 </script>
 
 <style>
+
 </style>
