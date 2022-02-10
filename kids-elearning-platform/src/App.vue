@@ -1,10 +1,4 @@
 <template>
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div> -->
-  <Login/>
-
   <nav>
     <i class="fas fa-bars"></i>
 
@@ -17,19 +11,21 @@
       <li><router-link to="/Feedback">Feedback</router-link></li>
     </ul>
   </nav>
+  
   <router-view />
 </template>
 
-<style>
+
+
+<style >
 body {
   font-family: monospace;
-  /* background-image: url(""); */
-  /* background-color: #2c3e50; */
+  background-image: url("https://wallpaperaccess.com/full/1704619.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 nav {
-  background-color: rgba(25, 233, 6, 0.541);
+  background-color: #0e0d0d04;
   height: 80px;
   width: 100%;
 }

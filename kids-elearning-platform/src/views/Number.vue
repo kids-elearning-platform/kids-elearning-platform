@@ -1,16 +1,14 @@
-
 <template>
- <h1>FUCK</h1>
+  <h1>Number</h1>
 </template>
 
 <script>
-
 export default {
-name : 'Admin',
-
+  name: "Number",
 }
 </script>
 
 <style>
+
 
 </style>

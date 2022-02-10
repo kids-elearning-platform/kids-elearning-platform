@@ -1,13 +1,10 @@
-
 <template>
- <h1>FUCK</h1>
+  <h1>Fruit</h1>
 </template>
 
 <script>
-
 export default {
-name : 'Admin',
-
+name:'Fruit'
 }
 </script>
 
