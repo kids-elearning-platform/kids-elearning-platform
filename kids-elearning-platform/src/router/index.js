@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 
+
+
 const routes = [
   {
     path: "/",
@@ -35,7 +37,7 @@ const routes = [
     import(/* webpackChunkName: "Contact" */ "../views/Contact.vue"),
   },
    {
-    path: "/Ad1min",
+    path: "/Admin",
     name: "Admin" ,
     component: () =>
     import(/* webpackChunkName: "Admin" */ "../views/Admin.vue"),
@@ -68,6 +70,12 @@ const routes = [
     name:"login",
     component : ()=>
     import(/*webpackChunkName: "login" */ "../components/Login.vue")
+  },
+  {
+    path:"/Statistic",
+    name : "Statistic",
+    component :  () =>
+    import (/*webpackChunkName: "statistic" */ "../components/Statistic.vue")
   }
 ];
 
