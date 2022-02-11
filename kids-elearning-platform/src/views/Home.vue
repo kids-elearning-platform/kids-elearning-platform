@@ -11,8 +11,8 @@ export default {
   name: "Home",
   components: {
     HelloWorld,
-  },
-};
+  },}
+ 
 </script>
 
 <style scoped>

@@ -8,16 +8,15 @@
       <li><router-link to="/About">About</router-link></li>
       <li><router-link to="/Contact">Contact</router-link></li>
       <li><router-link to="/Challenge">Challenge</router-link></li>
-      <li><router-link to="/Feedback">Feedback</router-link></li>
+      <li><router-link to="/Statistic">statistic</router-link></li>
     </ul>
   </nav>
-  
+
   <router-view />
 </template>
 
 
-
-<style >
+<style>
 body {
   font-family: monospace;
   background-image: url("https://wallpaperaccess.com/full/1704619.jpg");
@@ -28,6 +27,7 @@ nav {
   background-color: #0e0d0d04;
   height: 80px;
   width: 100%;
+  
 }
 label.logo {
   color: white;
@@ -112,7 +112,5 @@ body {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-#stt{
-  
-}
+
 </style>
