@@ -2,7 +2,7 @@
   <div class="bigContainer">
     <div class="container">
       <div class="child">
-        <form @submit="postData" method="post">
+        <form @click="postData" >
           <br />
           <div style="color: white">Add Question :</div>
           <input
@@ -69,9 +69,10 @@ export default {
       e.preventDefault();
       console.warn(this.data);
       axios
-        .post("http://localhost:5000/addexercices", this.data)
+        .post("http://localhost:3000/api/item/admin", this.data)
         .then((result) => {
-          console.log(result);
+          console.log(result.data,'dsdsd');
+          
         });
     },
   },
