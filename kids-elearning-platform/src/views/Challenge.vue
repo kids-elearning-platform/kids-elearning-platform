@@ -2,7 +2,7 @@
   <div>
     
     <div id="rend">
-      <div v-if="page===0">
+      <div v-if="page===1">
       <div >
         <h1 id="start" onclick="clicked">Challenges</h1>
       </div>
@@ -61,10 +61,13 @@
      </div>
      
      </div>
-     <div v-if="page==1">
+     <div v-if="page==0">
                <img @click="changepage" id="arrow" src="https://th.bing.com/th/id/R.33a1b7205342d728d9b5a70ed5e57308?rik=6R5w8cdKAe9dkQ&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2fL%2fY%2fI%2fS%2fg%2fX%2fyellow-arrow-hi.png&ehk=HPyW0k%2bse2bHTrBdOcz3NrxElY%2f6xg65rCG%2baCtcwyY%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt=""> <img id="arrowback" @click="previouspage" src="https://th.bing.com/th/id/R.33a1b7205342d728d9b5a70ed5e57308?rik=6R5w8cdKAe9dkQ&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2fL%2fY%2fI%2fS%2fg%2fX%2fyellow-arrow-hi.png&ehk=HPyW0k%2bse2bHTrBdOcz3NrxElY%2f6xg65rCG%2baCtcwyY%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
 
+     <div id="red">
+       <h1>Blue</h1>
 
+      </div>
      </div>
       
 
@@ -244,6 +247,14 @@ margin-left: 150px;
   margin-top: -40px;
   background: rgba(135, 243, 11, 0.863);
   padding: 20px;
+  border-radius: 5px;
+}
+
+#red{
+  height: 300px;
+  width: 300px;
+  background-color: #e22525;
+  margin-left: 400px;
   border-radius: 5px;
 }
 
