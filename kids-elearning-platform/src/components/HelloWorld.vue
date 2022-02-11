@@ -25,9 +25,9 @@
           src="https://images-ext-2.discordapp.net/external/kyettUG_908oFu7-C8JmOtNGIdFYs6Ics-zja1YwfFg/https/cdn3d.iconscout.com/3d/premium/thumb/fruit-basket-4621201-3852043.png?width=433&height=433"
         /></router-link>
       </div>
+      
       <div class="card_title"></div>
     </div>
-
     <div class="card 4">
       <div class="card_image"><router-link to="/Number"> <img id="img"
           src="https://images-ext-2.discordapp.net/external/6gjcxtvNyvEzUE_q3GkZL6JJG2uvcID3O5HYR0HNeTI/https/cdn3d.iconscout.com/3d/premium/thumb/1-number-4863653-4056299.png?width=433&height=433"
@@ -36,8 +36,10 @@
       </div>
       <div class="card_title title-black"></div>
     </div>
+ 
   </div>
   <router-view />
+
 </template>
 
 <script>
@@ -62,7 +64,14 @@ export default {
  height: 250px;
  width: 250px;
 }
+#tothegame{
 
+}
+#gamegame{
+  height: 1cm;
+  width: 1cm;
+  background-color: black;
+}
 .card {
   margin: 15px auto;
   width: 250px;
