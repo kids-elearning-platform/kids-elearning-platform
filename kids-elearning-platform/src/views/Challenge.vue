@@ -155,7 +155,7 @@ export default {
 #start{
   color: aliceblue;
    animation: shine 2s forwards, blink 3s 2s infinite;
-   color: #e22525; font-family: 'Droid serif', serif; font-size: 36px; font-weight:bolder; font-style:normal; line-height: 44px; margin: 0 0 12px; text-align: center;
+   color: rgba(15, 17, 20, 0.75); font-family: 'Droid serif', serif; font-size: 36px; font-weight:bolder; font-style:normal; line-height: 44px; margin: 0 0 12px; text-align: center;
   
 }
 #rend{

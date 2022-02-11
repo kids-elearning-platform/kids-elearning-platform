@@ -7,7 +7,7 @@
 <div>
     <div class="answer" v-for="(question,index) in questions[index].suggestions" v-bind="key" :key="index" @click="next(index)">
      
-     <img src="question.suggestion" alt=""/> {{ question.suggestion}}
+     <img :src="question.suggestion" alt=""/> 
     </div>
   </div> 
     </div>

@@ -88,14 +88,19 @@ body {
   
 }
 #navv{
-    background-color: rgba(255, 228, 196, 0.603);
+    /* background-color: rgba(255, 228, 196, 0.603);
   margin-left: 0px;
   margin-top: 4px;
   border-radius: 5px;
   background: rgba(189, 17, 17, 0.61);
   box-shadow: 0 8px 32px 0 rgba(14, 2, 37, 0.705);
   backdrop-filter: blur( 4.5px );
-  -webkit-backdrop-filter: blur( 4.5px );
+  -webkit-backdrop-filter: blur( 4.5px ); */
+      backdrop-filter: blur(4px) saturate(180%);
+    -webkit-backdrop-filter: blur(4px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
   border-radius: 10px;
   border: 1px solid rgba(15, 4, 44, 0.18);
 }

@@ -50,6 +50,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .cards-list {
+  margin-top:15% ; 
   z-index: 0;
   width: 100%;
   display: flex;
