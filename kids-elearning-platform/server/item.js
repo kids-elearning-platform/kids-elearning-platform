@@ -19,6 +19,7 @@ var addQuizzByCategory=(req,res)=>{
         forthAnswer:req.body.forthAnswer,
         category:req.body.category,
         
+        
     };
     // sendConfirmation(userData.email, userData.firstName, userData.lastName);
     User.Admin.create(adminData, (err, data) => {
