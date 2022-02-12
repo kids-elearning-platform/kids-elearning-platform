@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="changeview === false">
     <div id="box">
       <div @click="playSound(sounds[index])" class="titleContainer title">
         <img
@@ -20,6 +20,31 @@
       </div>
     </div>
   </div>
+  <div v-if="changeview === true">
+    <div>
+      <div id="box">
+        {{this.test()}}
+       
+        <div class="parent">
+         
+       
+          <div>
+          <img id="img2" :src="this.photo"/>
+          </div>
+       
+          <div>
+          <h1 id='p'></h1>
+          </div>
+       
+          <div>
+          <img id="img1" src="https://images-ext-2.discordapp.net/external/bqlYwU1oGL3swILLp2qBksk2Bj7Te2UmswRzMh_4Iog/https/cdn3d.iconscout.com/3d/premium/thumb/three-number-4863643-4056289.png?width=433&height=433"/></div></div>
+          </div>
+      </div>
+      <div>
+        <button>Click here !</button>
+      </div>
+  </div> 
+
 </template>
 <script>
 import red from "../../public/sounds/red.mp3";
@@ -30,6 +55,7 @@ export default {
   name: "Color",
   data() {
     return {
+      changeview: false,
       sounds: [red, oranges, green],
       score: 0,
       index: 0,
@@ -89,6 +115,7 @@ export default {
     };
   },
   methods: {
+    
     playSound(sound) {
       if (sound) {
         var audio = new Audio(sound);
@@ -122,18 +149,43 @@ export default {
 
       //return this.userResponses.filter(function(val) { return val }).length;
     },
+     test(){
+      if(this.score===0){
+        this.photo="https://images-ext-2.discordapp.net/external/KKhnER3qr6BJASM64Q5R1mWDuDA3dhL2Keo8cCiaxJY/https/cdn3d.iconscout.com/3d/premium/thumb/zero-number-4863645-4056291.png?width=432&height=432"
+      }
+     if(this.score===1){
+
+       console.log('aaaaaaaaaaaaaaa');
+       this.photo="https://images-ext-2.discordapp.net/external/6gjcxtvNyvEzUE_q3GkZL6JJG2uvcID3O5HYR0HNeTI/https/cdn3d.iconscout.com/3d/premium/thumb/1-number-4863653-4056299.png?width=432&height=432"
+     }if(this.score===2){
+
+       console.log('aaaaaaaaaaaaaaa');
+       this.photo="https://images-ext-2.discordapp.net/external/ARbyf1ozzv81gNLPyZpjCif2h9CEQKW5IFItT4jxywI/https/cdn3d.iconscout.com/3d/premium/thumb/two-number-4863651-4056297.png?width=433&height=433"
+     }
+    },
   },
 };
 </script>
 <style scoped>
+#img1{
+  margin-left:-600px;
+  margin-top: 90px;
+  width: 250px;
+  height: 250px;
+}
+#img2{
+  width: 200px;
+  height: 200px;
+  margin-right: -600px ;
+  margin-top: -130px;
+  
+}
+
 #img {
-  border-radius: 50%;
   width: 250px;
   height: 250px;
 }
 #question {
-  height: 150px;
-  width: 150px;
   font-size: 3cm;
   cursor: pointer;
 }
@@ -158,5 +210,25 @@ export default {
   -webkit-backdrop-filter: blur(4.5px);
   border-radius: 10px;
   border: 1px solid rgba(15, 4, 44, 0.18);
+}
+.score {
+  
+  color: white;
+  font-size: 40px;
+}
+#p{
+  width:10px; 
+  height:200px;
+  background-color: white;
+  transform: rotate(18deg);
+  margin-left: 240px;
+}
+.parent {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 4fr;
+grid-column-gap: 2px;
+grid-row-gap: 0px;
+margin-top: 300px;
 }
 </style>
