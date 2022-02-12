@@ -56,7 +56,7 @@
       </div>
       
       <div id="diff">
-       <h1> rakia: {{this.count}}</h1>
+       <h1> MISSED: {{this.count}}</h1>
 
      </div>
      
