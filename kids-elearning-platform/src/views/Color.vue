@@ -25,11 +25,12 @@
 import red from "../../public/sounds/red.mp3";
 import oranges from "../../public/sounds/oranges.mp3";
 import green from "../../public/sounds/green.mp3";
-
+import axios from "axios"
 export default {
   name: "Color",
   data() {
     return {
+      data:[],
       sounds: [red, oranges, green],
       score: 0,
       index: 0,
@@ -89,6 +90,15 @@ export default {
     };
   },
   methods: {
+    GetData() {
+      axios.get("http://localhost:3000/api/item/admin").then((result) => {
+        for (let i = 0; result.data.length; i++) {
+          if (result.data[i].category === "Color") {
+            this.data = this.data + result.data[i];
+          }
+        }
+      });
+    },
     playSound(sound) {
       if (sound) {
         var audio = new Audio(sound);

@@ -26,11 +26,12 @@
 import strawberry from "../../public/sounds/strawberry.mp3";
 import oranges from "../../public/sounds/oranges.mp3";
 import carrots from "../../public/sounds/carrots.mp3";
-
+import axios from "axios";
 export default {
   name: "Fruit",
   data() {
     return {
+      data:[],
       sounds: [strawberry, oranges, carrots],
       score: 0,
       index: 0,
@@ -100,6 +101,17 @@ export default {
     };
   },
   methods: {
+    GetData() {
+     
+     
+      axios.get("http://localhost:3000/api/item/admin").then((result) => {
+        for (let i = 0; result.data.length; i++) {
+          if (result.data[i].category === "Fruit") {
+            this.data = this.data + result.data[i];
+          }
+        }
+      });
+    },
     playSound(sound) {
       if (sound) {
         var audio = new Audio(sound);

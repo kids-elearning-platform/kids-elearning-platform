@@ -2,7 +2,7 @@
   <div class="bigContainer">
     <div class="container">
       <div class="child">
-        <form @click="postData" >
+        <form @click="postData">
           <br />
           <div style="color: white">Add Question :</div>
           <input
@@ -11,38 +11,70 @@
             v-model="data.question"
             placeholder="question"
           />
+
           <br />
           <input
             name="category"
             type="text"
             v-model="data.category"
             placeholder="category"
-          /><br />
+          />
+          <br />
           <input
             name="firstAnswer"
             type="text"
             v-model="data.firstAnswer"
             placeholder="first Answer"
-          /><br />
+          />
           <input
-            name="secondAnswer"
+            name="firstAnswer"
+            v-model="data.firstAnswer"
+            type="checkbox"
+          />
+          <br />
+          <input
+            name="firstAnswer"
             type="text"
             v-model="data.secondAnswer"
             placeholder="second Answer"
-          /><br />
+          />
+          <input
+            name="secondAnswer"
+            v-model="data.secondAnswer"
+            type="checkbox"
+          />
+          <br />
           <input
             name="thirdAnswer"
             type="text"
             v-model="data.thirdAnswer"
             placeholder="third Answer"
-          /><br />
+          />
+          <input
+            v-model="data.thirdAnswer"
+            name="thirdAnswer"
+            type="checkbox"
+          />
+          <br />
           <input
             name="forthAnswer"
             type="text"
             v-model="data.forthAnswer"
             placeholder="forth answer"
+          />
+          <input
+            v-model="data.forthAnswer"
+            name="forthAnswer"
+            type="checkbox"
+          />
+          <br />
+          <input
+            name="correctAnswer"
+            type="text"
+            v-model="data.correctAnswer"
+            placeholder="correct Answer"
           /><br />
-          <button class="button" type="submit">Submit</button>
+          <button class="button" type="submit" @click="postdata">Submit</button>
         </form>
       </div>
     </div>
@@ -61,19 +93,21 @@ export default {
         thirdAnswer: null,
         forthAnswer: null,
         category: null,
+        correctAnswer: null,
       },
     };
   },
   methods: {
-    postData(e) {
+   postData(e) {
       e.preventDefault();
-      console.warn(this.data);
+      console.log(this.data);
       axios
         .post("http://localhost:3000/api/item/admin", this.data)
         .then((result) => {
-          console.log(result.data,'dsdsd');
-          
-        });
+          console.log("after",this.data);
+          console.log("res from server",result);
+        })
+        .catch((error) => {console.log(error);})
     },
   },
 };

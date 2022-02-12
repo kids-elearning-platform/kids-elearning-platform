@@ -27,11 +27,12 @@ import number3 from "../../public/sounds/number3.mp3";
 import number2 from "../../public/sounds/number2.mp3";
 import number6 from "../../public/sounds/number6.mp3";
 import number5 from "../../public/sounds/number5.mp3";
-
+import axios from "axios";
 export default {
   name: "Number",
   data() {
     return {
+      data:[],
       sounds: [number3, number2, number6, number5],
       score: 0,
       index: 0,
@@ -104,6 +105,17 @@ export default {
     };
   },
   methods: {
+    GetData() {
+      
+      console.log(this.data);
+      axios.get("http://localhost:3000/api/item/admin").then((result) => {
+        for (let i = 0; result.data.length; i++) {
+          if (result.data[i].category === "Number") {
+            this.data = this.data + result.data[i];
+          }
+        }
+      });
+    },
     playSound(sound) {
       if (sound) {
         var audio = new Audio(sound);
