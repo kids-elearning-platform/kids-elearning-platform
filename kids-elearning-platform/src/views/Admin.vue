@@ -119,7 +119,11 @@ input[type="submit"]:hover {
 .child {
   display: inline-block;
   border-radius: 5px;
-  background-color: black;
-  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.829);
+  padding: 50px;
+  margin-top: 200px;
+  margin-left: 200px;
+  width: 900px;
+
 }
 </style>

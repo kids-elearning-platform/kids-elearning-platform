@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="changeview === false">
     <div id="box">
       <div
         id="question"
@@ -21,6 +21,31 @@
       </div>
     </div>
   </div>
+  <div v-if="changeview === true">
+    <div>
+      <div id="box">
+        {{this.test()}}
+       
+        <div class="parent">
+         
+       
+          <div>
+          <img id="img2" :src="this.photo"/>
+          </div>
+       
+          <div>
+          <h1 id='p'></h1>
+          </div>
+       
+          <div>
+          <img id="img1" src="https://images-ext-2.discordapp.net/external/bqlYwU1oGL3swILLp2qBksk2Bj7Te2UmswRzMh_4Iog/https/cdn3d.iconscout.com/3d/premium/thumb/three-number-4863643-4056289.png?width=433&height=433"/></div></div>
+          </div>
+      </div>
+      <div>
+        <button>Click here !</button>
+      </div>
+  </div> 
+
 </template>
 <script>
 import strawberry from "../../public/sounds/strawberry.mp3";
@@ -31,6 +56,7 @@ export default {
   name: "Fruit",
   data() {
     return {
+      changeview: false,
       sounds: [strawberry, oranges, carrots],
       score: 0,
       index: 0,
@@ -100,6 +126,21 @@ export default {
     };
   },
   methods: {
+     test(){
+      if(this.score===0){
+        this.photo="https://images-ext-2.discordapp.net/external/KKhnER3qr6BJASM64Q5R1mWDuDA3dhL2Keo8cCiaxJY/https/cdn3d.iconscout.com/3d/premium/thumb/zero-number-4863645-4056291.png?width=432&height=432"
+      }
+     if(this.score===1){
+
+       console.log('aaaaaaaaaaaaaaa');
+       this.photo="https://images-ext-2.discordapp.net/external/6gjcxtvNyvEzUE_q3GkZL6JJG2uvcID3O5HYR0HNeTI/https/cdn3d.iconscout.com/3d/premium/thumb/1-number-4863653-4056299.png?width=432&height=432"
+     }if(this.score===2){
+
+       console.log('aaaaaaaaaaaaaaa');
+       this.photo="https://images-ext-2.discordapp.net/external/ARbyf1ozzv81gNLPyZpjCif2h9CEQKW5IFItT4jxywI/https/cdn3d.iconscout.com/3d/premium/thumb/two-number-4863651-4056297.png?width=433&height=433"
+     }
+    },
+    
     playSound(sound) {
       if (sound) {
         var audio = new Audio(sound);
@@ -133,6 +174,7 @@ export default {
 
       //return this.userResponses.filter(function(val) { return val }).length;
     },
+    
   },
 };
 </script>

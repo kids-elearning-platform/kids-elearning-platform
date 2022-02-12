@@ -45,6 +45,9 @@
           <img id="img1" src="https://images-ext-2.discordapp.net/external/bqlYwU1oGL3swILLp2qBksk2Bj7Te2UmswRzMh_4Iog/https/cdn3d.iconscout.com/3d/premium/thumb/three-number-4863643-4056289.png?width=433&height=433"/></div></div>
           </div>
       </div>
+      <div>
+        <button>Click here !</button>
+      </div>
   </div> 
   
 </template>

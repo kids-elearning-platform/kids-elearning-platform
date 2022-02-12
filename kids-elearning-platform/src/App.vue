@@ -53,7 +53,7 @@ nav ul li a {
 }
 nav ul li a.active,
 nav ul li a:hover {
-  background: #1b9bff;
+  background: #00000063;
   transition: 0.5s;
   border-radius: 5px;
 }
@@ -98,20 +98,20 @@ body {
   -webkit-backdrop-filter: blur( 4.5px ); */
       backdrop-filter: blur(4px) saturate(180%);
     -webkit-backdrop-filter: blur(4px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.75);
-    border-radius: 12px;
+    background-color: rgba(255, 0, 0, 0.678);
+    /* border-radius: 0px; */
     border: 1px solid rgba(255, 255, 255, 0.125);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   border: 1px solid rgba(15, 4, 44, 0.18);
 }
 
 #nav {
-  padding: 30px;
+  padding: 0px;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #504f2c;
 }
 
 #nav a.router-link-exact-active {
