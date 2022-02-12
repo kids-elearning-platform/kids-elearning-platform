@@ -2,80 +2,71 @@
   <div class="bigContainer">
     <div class="container">
       <div class="child">
-        <form @click="postData">
+<table >
+              <div style="color: white">Add Question :</div>
+  <tr>
+    <th>
+      <form @click="postData" >
           <br />
-          <div style="color: white">Add Question :</div>
           <input
             name="question"
             type="text"
             v-model="data.question"
             placeholder="question"
           />
-
           <br />
           <input
             name="category"
             type="text"
             v-model="data.category"
             placeholder="category"
-          />
-          <br />
+          /><br />
           <input
             name="firstAnswer"
             type="text"
-            v-model="data.firstAnswer"
+            v-model="data.firstAnswer.url"
             placeholder="first Answer"
-          />
-          <input
-            name="firstAnswer"
-            v-model="data.firstAnswer"
-            type="checkbox"
-          />
-          <br />
-          <input
-            name="firstAnswer"
-            type="text"
-            v-model="data.secondAnswer"
-            placeholder="second Answer"
-          />
+          /><br />
           <input
             name="secondAnswer"
-            v-model="data.secondAnswer"
-            type="checkbox"
-          />
-          <br />
-          <input
-            name="thirdAnswer"
             type="text"
-            v-model="data.thirdAnswer"
-            placeholder="third Answer"
-          />
-          <input
-            v-model="data.thirdAnswer"
-            name="thirdAnswer"
-            type="checkbox"
-          />
-          <br />
-          <input
-            name="forthAnswer"
-            type="text"
-            v-model="data.forthAnswer"
-            placeholder="forth answer"
-          />
-          <input
-            v-model="data.forthAnswer"
-            name="forthAnswer"
-            type="checkbox"
-          />
-          <br />
-          <input
-            name="correctAnswer"
-            type="text"
-            v-model="data.correctAnswer"
-            placeholder="correct Answer"
+            v-model="data.secondAnswer.url"
+            placeholder="second Answer"
           /><br />
-          <button class="button" type="submit" @click="postdata">Submit</button>
+          <input
+            name="thirdAnswer"
+            type="text"
+            v-model="data.thirdAnswer.url"
+            placeholder="third Answer"
+          /><br />
+          <input
+            name="forthAnswer"
+            type="text"
+            v-model="data.forthAnswer.url"
+            placeholder="forth answer"
+          /><br />
+          <button class="button" type="submit">Submit</button>
         </form>
+    </th>
+    <th >
+      <div class='thh'>
+         <input @click='check()'  class="check" type="radio" id="one" value="0" v-model="data.picked">
+   <br>
+        <input @click='check()' class="check" type="radio" id="two" value="1" v-model="data.picked">
+   <br>
+  <input @click='check()' class="check" type="radio" id="trois" value="2" v-model="data.picked">
+   <br>
+    <input @click='check()' class="check" type="radio" id="quatre" value="3" v-model="data.picked">
+   <br>
+   </div>
+      
+      </th>  
+  </tr>
+ 
+</table>
+
+        
+       
       </div>
     </div>
   </div>
@@ -88,27 +79,31 @@ export default {
     return {
       data: {
         question: null,
-        firstAnswer: null,
-        secondAnswer: null,
-        thirdAnswer: null,
-        forthAnswer: null,
+        firstAnswer: {url:'',correct:false},
+        secondAnswer: {url:'',correct:false},
+        thirdAnswer: {url:'',correct:false},
+        forthAnswer: {url:'',correct:false},
         category: null,
-        correctAnswer: null,
+        picked:'',
       },
     };
   },
   methods: {
-   postData(e) {
+    check(){
+
+    },
+    postData(e) {
       e.preventDefault();
       console.log(this.data);
       axios
         .post("http://localhost:3000/api/item/admin", this.data)
         .then((result) => {
-          console.log("after",this.data);
-          console.log("res from server",result);
+          result.send(this.data)
         })
-        .catch((error) => {console.log(error);})
-    },
+        .catch((error) => {
+          console.log(error,'error');
+        });
+    }
   },
 };
 </script>
@@ -126,7 +121,7 @@ input[type="text"] {
   border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
+  margin-top: 0px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }
@@ -134,6 +129,17 @@ input[type="text"] {
 input[type="submit"]:hover {
   background-color: #45a049;
 }
+
+.thh{
+  margin-top: 30px;
+}
+
+.check{
+ margin-left: 30px;
+ margin-top:40px;
+
+}
+
 .button {
   background-color: #f44336; /* Green */
   border: none;
@@ -155,5 +161,6 @@ input[type="submit"]:hover {
   border-radius: 5px;
   background-color: black;
   padding: 40px;
+   margin-top: 80px;
 }
 </style>
