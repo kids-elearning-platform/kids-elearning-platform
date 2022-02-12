@@ -64,8 +64,11 @@
      <div v-if="page==1">
                <img @click="changepage" id="arrow" src="https://th.bing.com/th/id/R.33a1b7205342d728d9b5a70ed5e57308?rik=6R5w8cdKAe9dkQ&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2fL%2fY%2fI%2fS%2fg%2fX%2fyellow-arrow-hi.png&ehk=HPyW0k%2bse2bHTrBdOcz3NrxElY%2f6xg65rCG%2baCtcwyY%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt=""> <img id="arrowback" @click="previouspage" src="https://th.bing.com/th/id/R.33a1b7205342d728d9b5a70ed5e57308?rik=6R5w8cdKAe9dkQ&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2fL%2fY%2fI%2fS%2fg%2fX%2fyellow-arrow-hi.png&ehk=HPyW0k%2bse2bHTrBdOcz3NrxElY%2f6xg65rCG%2baCtcwyY%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
 
-     <div id="red">
-       <h1>Blue</h1>
+     <div  >
+       <h1 id="blue">Blue</h1>
+       <h1 id="yellow">Yellow</h1>
+       <h1 id="red">red</h1>
+       <h1 id="green">green</h1>
 
       </div>
      </div>
@@ -158,7 +161,7 @@ export default {
 #start{
   color: aliceblue;
    animation: shine 2s forwards, blink 3s 2s infinite;
-   color: #e22525; font-family: 'Droid serif', serif; font-size: 36px; font-weight:bolder; font-style:normal; line-height: 44px; margin: 0 0 12px; text-align: center;
+   color: rgba(15, 17, 20, 0.75); font-family: 'Droid serif', serif; font-size: 36px; font-weight:bolder; font-style:normal; line-height: 44px; margin: 0 0 12px; text-align: center;
   
 }
 #rend{
@@ -250,13 +253,51 @@ margin-left: 150px;
   border-radius: 5px;
 }
 
+#blue{
+  height: 300px;
+  width: 300px;
+  color: blueviolet;
+  /* background-color: #e22525; */
+  margin-left: 400px;
+  border-radius: 5px;
+  font-size: x-large;
+}
+#green{
+  height: 300px;
+  width: 300px;
+  color: rgb(0, 2, 122);
+  /* background-color: #e22525; */
+  /* margin-left: 400px; */
+  border-radius: 5px;
+  font-size: x-large;
+  margin-top: -500px;
+  margin-left: 700px;
+}
+
+#yellow{
+  height: 300px;
+  width: 300px;
+  color: rgb(11, 241, 11);
+  /* background-color: #e22525; */
+  margin-left: 400px;
+  border-radius: 5px;
+  font-size: x-large;
+  margin-top: -500px;
+}
+
 #red{
   height: 300px;
   width: 300px;
-  background-color: #e22525;
-  margin-left: 400px;
+  color: rgb(255, 0, 0);
+  /* background-color: #e22525; */
+  margin-left: 700px;
   border-radius: 5px;
+  font-size: x-large;
+  margin-top: -100px;
 }
+
+
+
 
 
 
