@@ -93,7 +93,7 @@ export default {
 };
 </script>
 
-<style>
+<style  scoped>
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -117,6 +117,7 @@ html {
 }
 
 .card {
+  
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
   border-radius: 15%
@@ -130,12 +131,17 @@ html {
 }
 
 .container {
-  padding: 0 16px;
+
+  display: grid ;
+  
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+
 }
 
 .container::after,
 .row::after {
-  content: "";
+
   clear: both;
   display: table;
 }
