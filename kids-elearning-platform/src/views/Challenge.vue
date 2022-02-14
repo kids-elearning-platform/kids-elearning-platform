@@ -63,28 +63,18 @@
      </div>
      </div>
      <div v-if="page==1">
+        
+    <a id="to" href="http://localhost:8080"><img id='ya' src="https://i1.sndcdn.com/artworks-000380296524-chzw5l-t500x500.jpg"/></a>
+  
                <img @click="changepage" id="arrow" src="https://th.bing.com/th/id/R.33a1b7205342d728d9b5a70ed5e57308?rik=6R5w8cdKAe9dkQ&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2fL%2fY%2fI%2fS%2fg%2fX%2fyellow-arrow-hi.png&ehk=HPyW0k%2bse2bHTrBdOcz3NrxElY%2f6xg65rCG%2baCtcwyY%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt=""> <img id="arrowback" @click="previouspage" src="https://th.bing.com/th/id/R.33a1b7205342d728d9b5a70ed5e57308?rik=6R5w8cdKAe9dkQ&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2fL%2fY%2fI%2fS%2fg%2fX%2fyellow-arrow-hi.png&ehk=HPyW0k%2bse2bHTrBdOcz3NrxElY%2f6xg65rCG%2baCtcwyY%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
-
-     <div  >
-       <h1 id="blue">Blue</h1>
-       <h1 id="yellow">Yellow</h1>
-       <h1 @click="show" id="red">red</h1>
-       <h1 id="green">green</h1>
-
-      </div>
+         
      </div>
      <div>
       
 
     </div>
 
-     
     
-    
-  </div>
-  <div v-if="page===3">
-    <h2 id="msg" >Congratuation, you fill all of it and your child shoold complete the other exercices </h2>
-
   </div>
   
   
@@ -167,6 +157,10 @@ export default {
 </script>
 
 <style>
+#ya{
+  margin-bottom: 50px;
+  
+}
 #start{
   color: aliceblue;
    animation: shine 2s forwards, blink 3s 2s infinite;
@@ -201,6 +195,9 @@ export default {
   transform: scaleX(-1);
 
 
+}
+#pac{
+  margin-bottom: 3cm;
 }
 #game{
   height: 450px;

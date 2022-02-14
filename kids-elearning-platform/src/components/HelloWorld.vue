@@ -64,9 +64,7 @@ export default {
  height: 250px;
  width: 250px;
 }
-#tothegame{
 
-}
 #gamegame{
   height: 1cm;
   width: 1cm;

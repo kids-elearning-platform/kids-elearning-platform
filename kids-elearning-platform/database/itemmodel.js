@@ -13,10 +13,10 @@ const kidSchema= new mongoose.Schema({
 })
 const adminSchema= new mongoose.Schema({
  question:String,
- firstAnswer:String,
- secondAnswer:String,
- thirdAnswer:String,
- forthAnswer:String,
+ firstAnswer:Object,
+ secondAnswer:Object,
+ thirdAnswer:Object,
+ forthAnswer:Object,
  category:String,
 })
 

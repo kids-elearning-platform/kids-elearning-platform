@@ -2,9 +2,12 @@
   <div class="bigContainer">
     <div class="container">
       <div class="child">
-        <form @click="postData" >
+<table >
+              <div style="color: white">Add Question :</div>
+  <tr>
+    <th>
+      <form @click="postData" >
           <br />
-          <div style="color: white">Add Question :</div>
           <input
             name="question"
             type="text"
@@ -21,29 +24,49 @@
           <input
             name="firstAnswer"
             type="text"
-            v-model="data.firstAnswer"
+            v-model="data.firstAnswer.url"
             placeholder="first Answer"
           /><br />
           <input
             name="secondAnswer"
             type="text"
-            v-model="data.secondAnswer"
+            v-model="data.secondAnswer.url"
             placeholder="second Answer"
           /><br />
           <input
             name="thirdAnswer"
             type="text"
-            v-model="data.thirdAnswer"
+            v-model="data.thirdAnswer.url"
             placeholder="third Answer"
           /><br />
           <input
             name="forthAnswer"
             type="text"
-            v-model="data.forthAnswer"
+            v-model="data.forthAnswer.url"
             placeholder="forth answer"
           /><br />
           <button class="button" type="submit">Submit</button>
         </form>
+    </th>
+    <th >
+      <div class='thh'>
+         <input @click='check()'  class="check" type="radio" id="one" value="0" v-model="data.picked">
+   <br>
+        <input @click='check()' class="check" type="radio" id="two" value="1" v-model="data.picked">
+   <br>
+  <input @click='check()' class="check" type="radio" id="trois" value="2" v-model="data.picked">
+   <br>
+    <input @click='check()' class="check" type="radio" id="quatre" value="3" v-model="data.picked">
+   <br>
+   </div>
+      
+      </th>  
+  </tr>
+ 
+</table>
+
+        
+       
       </div>
     </div>
   </div>
@@ -56,25 +79,31 @@ export default {
     return {
       data: {
         question: null,
-        firstAnswer: null,
-        secondAnswer: null,
-        thirdAnswer: null,
-        forthAnswer: null,
+        firstAnswer: {url:'',correct:false},
+        secondAnswer: {url:'',correct:false},
+        thirdAnswer: {url:'',correct:false},
+        forthAnswer: {url:'',correct:false},
         category: null,
+        picked:'',
       },
     };
   },
   methods: {
+    check(){
+
+    },
     postData(e) {
       e.preventDefault();
-      console.warn(this.data);
+      console.log(this.data);
       axios
         .post("http://localhost:3000/api/item/admin", this.data)
         .then((result) => {
-          console.log(result.data,'dsdsd');
-          
+          result.send(this.data)
+        })
+        .catch((error) => {
+          console.log(error,'error');
         });
-    },
+    }
   },
 };
 </script>
@@ -92,7 +121,7 @@ input[type="text"] {
   border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
+  margin-top: 0px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }
@@ -100,6 +129,17 @@ input[type="text"] {
 input[type="submit"]:hover {
   background-color: #45a049;
 }
+
+.thh{
+  margin-top: 30px;
+}
+
+.check{
+ margin-left: 30px;
+ margin-top:40px;
+
+}
+
 .button {
   background-color: #f44336; /* Green */
   border: none;
@@ -119,11 +159,8 @@ input[type="submit"]:hover {
 .child {
   display: inline-block;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.829);
-  padding: 50px;
-  margin-top: 200px;
-  margin-left: 200px;
-  width: 900px;
-
+  background-color: black;
+  padding: 40px;
+   margin-top: 80px;
 }
 </style>
