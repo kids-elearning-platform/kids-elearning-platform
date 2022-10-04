@@ -1,14 +1,8 @@
-<template>
-  <div v-if="changeview === false">
+<template class="container">
+  <div class="box-container" v-if="changeview === false">
     <div id="box">
-      <div
-        id="question"
-        @click="playSound(sounds[index])"
-        class="titleContainer title"
-      >
-        🔊
-      </div>
-      <div>
+      <div class="card" id="question" @click="playSound(sounds[index])">🔊</div>
+      <div id="image-container">
         <div
           class="answer"
           v-for="(question, index) in questions[index].suggestions"
@@ -17,7 +11,8 @@
           @click="next"
         >
           <img
-            id="img"
+            class="card"
+            id="ImageBox"
             :src="question.suggestion"
             @click="userresponse(question.correct)"
           />
@@ -26,13 +21,14 @@
     </div>
   </div>
   <div v-if="changeview === true">
-    <div>
+    <div class="box-container">
       <div id="box">
         {{ this.test() }}
-        <router-link to="/Color"><button class="myButton"  >Go To Color Quiz</button></router-link>
-           
+        <router-link to="/Color"
+          ><button class="myButton">Go To Color Quiz</button></router-link
+        >
+
         <div class="parent">
-       
           <div>
             <img id="img2" :src="this.photo" />
           </div>
@@ -52,7 +48,6 @@
     </div>
   </div>
   <!-- </div>  -->
-  
 </template>
 <script>
 import lion from "../../public/sounds/Lion.mp3";
@@ -61,11 +56,13 @@ import elephant from "../../public/sounds/elephant.mp3";
 import butterfly from "../../public/sounds/butterfly.mp3";
 import owl from "../../public/sounds/Owl.mp3";
 import axios from "axios";
+import Swal from "sweetalert2";
+
 export default {
   name: "Animal",
   data() {
     return {
-      data:[],
+      data: [],
       photo:
         "https://images-ext-2.discordapp.net/external/6gjcxtvNyvEzUE_q3GkZL6JJG2uvcID3O5HYR0HNeTI/https/cdn3d.iconscout.com/3d/premium/thumb/1-number-4863653-4056299.png?width=432&height=432",
       response: [],
@@ -143,16 +140,18 @@ export default {
     };
   },
   methods: {
-     postData(e) {
+    postData(e) {
       e.preventDefault();
       console.log(this.data);
       axios
         .post("http://localhost:3000/api/item/admin", this.data)
         .then((result) => {
-          console.log("after",this.data);
-          console.log("res from server",result);
+          console.log("after", this.data);
+          console.log("res from server", result);
         })
-        .catch((error) => {console.log(error);})
+        .catch((error) => {
+          console.log(error);
+        });
     },
     GetData() {
       axios.get("http://localhost:3000/api/item/admin").then((result) => {
@@ -165,15 +164,18 @@ export default {
     },
     test() {
       if (this.score === 0) {
-        this.photo ="https://images-ext-2.discordapp.net/external/KKhnER3qr6BJASM64Q5R1mWDuDA3dhL2Keo8cCiaxJY/https/cdn3d.iconscout.com/3d/premium/thumb/zero-number-4863645-4056291.png?width=432&height=432";
+        this.photo =
+          "https://images-ext-2.discordapp.net/external/KKhnER3qr6BJASM64Q5R1mWDuDA3dhL2Keo8cCiaxJY/https/cdn3d.iconscout.com/3d/premium/thumb/zero-number-4863645-4056291.png?width=432&height=432";
       }
       if (this.score === 1) {
         console.log("aaaaaaaaaaaaaaa");
-        this.photo ="https://images-ext-2.discordapp.net/external/6gjcxtvNyvEzUE_q3GkZL6JJG2uvcID3O5HYR0HNeTI/https/cdn3d.iconscout.com/3d/premium/thumb/1-number-4863653-4056299.png?width=432&height=432";
+        this.photo =
+          "https://images-ext-2.discordapp.net/external/6gjcxtvNyvEzUE_q3GkZL6JJG2uvcID3O5HYR0HNeTI/https/cdn3d.iconscout.com/3d/premium/thumb/1-number-4863653-4056299.png?width=432&height=432";
       }
       if (this.score === 2) {
         console.log("aaaaaaaaaaaaaaa");
-        this.photo ="https://images-ext-2.discordapp.net/external/ARbyf1ozzv81gNLPyZpjCif2h9CEQKW5IFItT4jxywI/https/cdn3d.iconscout.com/3d/premium/thumb/two-number-4863651-4056297.png?width=433&height=433";
+        this.photo =
+          "https://images-ext-2.discordapp.net/external/ARbyf1ozzv81gNLPyZpjCif2h9CEQKW5IFItT4jxywI/https/cdn3d.iconscout.com/3d/premium/thumb/two-number-4863651-4056297.png?width=433&height=433";
       }
     },
     userresponse(e) {
@@ -182,6 +184,17 @@ export default {
       if (e) {
         this.score = this.score + 1;
         console.log(this.score, "hani lena");
+        Swal.fire({
+          icon: "success",
+          title: "Good Job...",
+          timer: 1000,
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          timer: 1000,
+        });
       }
     },
 
@@ -204,93 +217,101 @@ export default {
         this.changeview = !this.changeview;
       }
     },
-    scores: function () {
-      var score = 0;
-
-      for (let i = 0; i < this.userResponses.length; i++) {
-        if (
-          typeof this.questions[i].responses[this.userResponses[i]] !==
-            "undefined" &&
-          this.quiz.questions[i].responses[this.userResponses[i]].correct
-        ) {
-          score = score + 1;
-        }
-      }
-      return score;
-
-      //return this.userResponses.filter(function(val) { return val }).length;
-    },
   },
 };
 </script>
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+.box-container {
+  margin-top: 2%;
+  margin-left: 20%;
+}
 .myButton {
-	box-shadow: 3px 4px 0px 0px #899599;
-	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
-	background-color:#ededed;
-	border-radius:15px;
-	border:1px solid #d6bcd6;
-	display:inline-block;
-	cursor:pointer;
-	color:#3a8a9e;
-	font-family:Arial;
-	font-size:28px;
-	padding:7px 25px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #e1e2ed;
+  box-shadow: 3px 4px 0px 0px #899599;
+  background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+  background-color: #ededed;
+  border-radius: 15px;
+  border: 1px solid #d6bcd6;
+  display: inline-block;
+  cursor: pointer;
+  color: #3a8a9e;
+  font-family: Arial;
+  font-size: 28px;
+  padding: 7px 25px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #e1e2ed;
+}
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
-	background-color:#bab1ba;
+  background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+  background-color: #bab1ba;
 }
 .myButton:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 #img1 {
-  margin-left: -600px;
-  margin-top: 90px;
   width: 250px;
   height: 250px;
 }
 #img2 {
+  margin-left: 70%;
   width: 200px;
   height: 200px;
-  margin-right: -600px;
-  margin-top: -130px;
+}
+#image-container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  cursor: pointer;
 }
 
-#img {
-  width: 250px;
-  height: 250px;
+#ImageBox {
+  width: 80%;
+  height: 100%;
 }
 #question {
-  font-size: 3cm;
+  font-size: 2cm;
   cursor: pointer;
 }
 .answer {
-  display: inline;
-  font-size: 5cm;
-  padding-left: 0cm;
-  padding-right: 5cm;
-  margin-left: 4cm;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  display: grid;
+  padding: 3%;
   cursor: pointer;
 }
 #box {
-  height: 700px;
-  width: 1500px;
-  background-color: rgba(255, 228, 196, 0.603);
-  margin-left: 200px;
-  margin-top: 40px;
-  border-radius: 5px;
+  z-index: 0;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   background: rgba(5, 5, 5, 0.61);
   box-shadow: 0 8px 32px 0 rgba(14, 2, 37, 0.705);
   backdrop-filter: blur(4.5px);
   -webkit-backdrop-filter: blur(4.5px);
-  border-radius: 10px;
   border: 1px solid rgba(15, 4, 44, 0.18);
+  border-radius: 5%;
+}
+
+.card {
+  border-radius: 20%;
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
 }
 .score {
+  align-content: center;
   color: white;
   font-size: 40px;
 }
@@ -302,11 +323,7 @@ export default {
   margin-left: 240px;
 }
 .parent {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 3fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  margin-top: 300px;
+  display: flex;
+  flex-direction: row;
 }
 </style>
