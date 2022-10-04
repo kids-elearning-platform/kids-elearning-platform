@@ -111,8 +111,7 @@ export default {
 <style scoped>
 .bigContainer {
   background: #f2f2f2;
-  height: 1150px;
-  margin-top: -60px;
+ 
 }
 
 input[type="text"] {
@@ -130,15 +129,9 @@ input[type="submit"]:hover {
   background-color: #45a049;
 }
 
-.thh{
-  margin-top: 30px;
-}
 
-.check{
- margin-left: 30px;
- margin-top:40px;
 
-}
+
 
 .button {
   background-color: #f44336; /* Green */

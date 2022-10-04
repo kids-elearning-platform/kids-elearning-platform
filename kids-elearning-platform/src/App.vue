@@ -1,4 +1,4 @@
-<template>
+<template class="container">
   <nav id="navv">
     <i class="fas fa-bars"></i>
 
@@ -15,19 +15,21 @@
   <router-view />
 </template>
 
-
 <style>
+.container {
+  height: 100vh;
+}
 body {
   font-family: monospace;
   background-image: url("https://wallpaperaccess.com/full/1704619.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
 }
 nav {
   background-color: #0e0d0d04;
-  height: 80px;
+  height: 20%;
   width: 100%;
-  
 }
 label.logo {
   color: white;
@@ -84,24 +86,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  
-  
 }
-#navv{
-    /* background-color: rgba(255, 228, 196, 0.603);
-  margin-left: 0px;
-  margin-top: 4px;
-  border-radius: 5px;
-  background: rgba(189, 17, 17, 0.61);
-  box-shadow: 0 8px 32px 0 rgba(14, 2, 37, 0.705);
-  backdrop-filter: blur( 4.5px );
-  -webkit-backdrop-filter: blur( 4.5px ); */
-      backdrop-filter: blur(4px) saturate(180%);
-    -webkit-backdrop-filter: blur(4px) saturate(180%);
-    background-color: rgba(255, 0, 0, 0.678);
-    /* border-radius: 0px; */
-    border: 1px solid rgba(255, 255, 255, 0.125);
-  /* border-radius: 10px; */
+#navv {
+  backdrop-filter: blur(4px) saturate(180%);
+  -webkit-backdrop-filter: blur(4px) saturate(180%);
+  background-color: rgba(255, 0, 0, 0.678);
+  border: 1px solid rgba(255, 255, 255, 0.125);
   border: 1px solid rgba(15, 4, 44, 0.18);
 }
 
@@ -117,5 +107,4 @@ body {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-
 </style>

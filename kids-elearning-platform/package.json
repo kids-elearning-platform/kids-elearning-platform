@@ -19,6 +19,7 @@
     "emailjs-com": "^3.2.0",
     "express": "^4.17.2",
     "mongoose": "^6.2.1",
+    "sweetalert2": "^11.4.37",
     "unirest": "^0.6.0",
     "vue": "^3.0.0",
     "vue-chartkick": "^1.1.0",
