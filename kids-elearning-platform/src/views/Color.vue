@@ -1,47 +1,51 @@
 <template class="container">
-  <div class="box-container" v-if="changeview === false">
-    <div id="box">
-      <div class="card" id="question" @click="playSound(sounds[index])">🔊</div>
-      <div id="image-container">
-        <div
-          class="answer"
-          v-for="(question, index) in questions[index].suggestions"
-          v-bind="key"
-          :key="index"
-          @click="next"
-        >
-          <img
-            class="card"
-            id="ImageBox"
-            :src="question.suggestion"
-            @click="userresponse(question.correct)"
-          />
+  <div>
+    <div class="box-container" v-if="changeview === false">
+      <div id="box">
+        <div class="card" id="question" @click="playSound(sounds[index])">
+          🔊
+        </div>
+        <div id="image-container">
+          <div
+            class="answer"
+            v-for="(question, index) in questions[index].suggestions"
+            v-bind="key"
+            :key="index"
+            @click="next"
+          >
+            <img
+              class="card"
+              id="ImageBox"
+              :src="question.suggestion"
+              @click="userresponse(question.correct)"
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div v-if="changeview === true">
-    <div class="box-container">
-      <div id="box">
-        {{ this.test() }}
-        <router-link to="/Color"
-          ><button class="myButton">Go To Color Quiz</button></router-link
-        >
+    <div v-if="changeview === true">
+      <div class="box-container">
+        <div id="box">
+          {{ this.test() }}
+          <router-link to="/fruit"
+            ><button class="myButton">Go To fruit Quiz</button></router-link
+          >
 
-        <div class="parent">
-          <div>
-            <img id="img2" :src="this.photo" />
-          </div>
+          <div class="parent">
+            <div>
+              <img id="img2" :src="this.photo" />
+            </div>
 
-          <div>
-            <h1 id="p"></h1>
-          </div>
+            <div>
+              <h1 id="p"></h1>
+            </div>
 
-          <div>
-            <img
-              id="img1"
-              src="https://images-ext-2.discordapp.net/external/bqlYwU1oGL3swILLp2qBksk2Bj7Te2UmswRzMh_4Iog/https/cdn3d.iconscout.com/3d/premium/thumb/three-number-4863643-4056289.png?width=433&height=433"
-            />
+            <div>
+              <img
+                id="img1"
+                src="https://images-ext-2.discordapp.net/external/bqlYwU1oGL3swILLp2qBksk2Bj7Te2UmswRzMh_4Iog/https/cdn3d.iconscout.com/3d/premium/thumb/three-number-4863643-4056289.png?width=433&height=433"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -69,7 +73,7 @@ export default {
           suggestions: [
             {
               suggestion:
-                "https://yarwoodleather.com/wp-content/uploads/2016/12/Yarwood-Leather-Style-Bright-Orange-01-scaled.jpg",
+                "https://t4.ftcdn.net/jpg/03/29/19/15/360_F_329191596_tRQiV7LZjTZtuPM09QyOS09HV1D9VimE.jpg",
             },
             {
               suggestion:
@@ -260,7 +264,7 @@ export default {
   display: flex;
   align-items: center;
   align-content: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   cursor: pointer;
 }
@@ -274,12 +278,10 @@ export default {
   cursor: pointer;
 }
 .answer {
-  height: 250px;
-  width: 250px;
+  height: 45%;
+  width: 45%;
   align-items: center;
   align-content: center;
-  justify-content: space-around;
-  display: grid;
   padding: 3%;
   cursor: pointer;
 }

@@ -1,4 +1,5 @@
 <template class="container">
+  <div>
   <div class="box-container" v-if="changeview === false">
     <div id="box">
       <div class="card" id="question" @click="playSound(sounds[index])">🔊</div>
@@ -47,7 +48,7 @@
       </div>
     </div>
   </div>
-  <!-- </div>  -->
+  </div> 
 </template>
 <script>
 import lion from "../../public/sounds/Lion.mp3";
