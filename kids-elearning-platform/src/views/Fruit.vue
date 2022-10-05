@@ -1,47 +1,51 @@
 <template class="container">
-  <div class="box-container" v-if="changeview === false">
-    <div id="box">
-      <div class="card" id="question" @click="playSound(sounds[index])">🔊</div>
-      <div id="image-container">
-        <div
-          class="answer"
-          v-for="(question, index) in questions[index].suggestions"
-          v-bind="key"
-          :key="index"
-          @click="next"
-        >
-          <img
-            class="card"
-            id="ImageBox"
-            :src="question.suggestion"
-            @click="userresponse(question.correct)"
-          />
+  <div>
+    <div class="box-container" v-if="changeview === false">
+      <div id="box">
+        <div class="card" id="question" @click="playSound(sounds[index])">
+          🔊
+        </div>
+        <div id="image-container">
+          <div
+            class="answer"
+            v-for="(question, index) in questions[index].suggestions"
+            v-bind="key"
+            :key="index"
+            @click="next"
+          >
+            <img
+              class="card"
+              id="ImageBox"
+              :src="question.suggestion"
+              @click="userresponse(question.correct)"
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div v-if="changeview === true">
-    <div>
-      <div id="box">
-        {{ this.test() }}
-        <router-link to="/Number"
-          ><button class="myButton">Go To Number Quiz</button></router-link
-        >
+    <div v-if="changeview === true">
+      <div>
+        <div id="box">
+          {{ this.test() }}
+          <router-link to="/Number"
+            ><button class="myButton">Go To Number Quiz</button></router-link
+          >
 
-        <div class="parent">
-          <div>
-            <img id="img2" :src="this.photo" />
-          </div>
+          <div class="parent">
+            <div>
+              <img id="img2" :src="this.photo" />
+            </div>
 
-          <div>
-            <h1 id="p"></h1>
-          </div>
+            <div>
+              <h1 id="p"></h1>
+            </div>
 
-          <div>
-            <img
-              id="img1"
-              src="https://images-ext-2.discordapp.net/external/bqlYwU1oGL3swILLp2qBksk2Bj7Te2UmswRzMh_4Iog/https/cdn3d.iconscout.com/3d/premium/thumb/three-number-4863643-4056289.png?width=433&height=433"
-            />
+            <div>
+              <img
+                id="img1"
+                src="https://images-ext-2.discordapp.net/external/bqlYwU1oGL3swILLp2qBksk2Bj7Te2UmswRzMh_4Iog/https/cdn3d.iconscout.com/3d/premium/thumb/three-number-4863643-4056289.png?width=433&height=433"
+              />
+            </div>
           </div>
         </div>
       </div>
